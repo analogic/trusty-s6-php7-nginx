@@ -14,8 +14,6 @@ RUN sed 's/\# server_tokens off;/server_tokens off;/' -i /etc/nginx/nginx.conf &
 RUN sed 's/listen = \/run\/php\/php7.0-fpm\.sock/listen = \/var\/run\/php-fpm.sock/' -i /etc/php/7.0/fpm/pool.d/www.conf && \
     sed 's/pid = \/run\/php\/php7.0-fpm\.pid/pid = \/var\/run\/php-fpm.pid/' -i /etc/php/7.0/fpm/php-fpm.conf
 
-RUN update-locale
-
 EXPOSE 80
 
 ADD rootfs /
